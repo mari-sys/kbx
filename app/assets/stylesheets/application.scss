@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+
+// 2. Bootstrap の変数を上書きする前に定義
+$font-family-sans-serif: 'Noto Sans JP', sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.bg-cream {
+  background-color: #FFF8E7; // 優しいクリーム色
+}
+
+.btn-kick-start {
+  background-color: #ff6f61;
+  border: none;
+  color: white;
+
+  &:hover {
+    background-color: #e65a50; // 少し濃くなる
+    color: white;
+  }
+}
+
+.btn-next {
+  background-color: #ff6f61; // 明るく目立つ赤系
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #e4574e;
+  }
+}
+.alert-danger {
+  background-color: #ffe5e5;
+  color: #d60000;
+  border: none;
+  border-radius: 0.75rem;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-check-label {
+  font-size: 1.25rem; 
+}
+
+.fullscreen-center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}

@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <% if flash[:alert] %>
+    <div class="alert alert-danger"><%= flash[:alert] %></div>
+  <% end %>
+
+  <!--  進捗バー -->
+  <%= render partial: "progress_bar", locals: { step: @step } %>
+
+  <!-- 質問 -->
+  <div class="card shadow-sm p-4 text-center">
+    <h2 class="mb-4">Q<%= @step %>: <%= @question["text"] %></h2>
+    <%= render partial: "question_form", locals: { question: @question, step: @step, selected_answer: @selected_answer } %>
+  </div>
+</div>

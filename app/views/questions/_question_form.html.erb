@@ -1,0 +1,18 @@
+<%= form_with url: question_answer_path, method: :post, class: "mt-4" do %>
+  <%= hidden_field_tag :step, step %>
+
+  <!-- 選択肢は左寄せ -->
+  <div class="d-flex flex-column align-items-start mx-auto" style="max-width: 500px;">
+    <% question["options"].to_a.shuffle.each do |value, label| %>
+      <div class="form-check mb-4">
+        <%= radio_button_tag :answer, value.to_s, value.to_s == @selected_answer.to_s, class: 'form-check-input', id: "answer_#{value}" %>
+    <%= label_tag "answer_#{value}", label, class: 'form-check-label ms-2' %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- 次へボタン中央 -->
+  <div class="text-center mt-4">
+    <%= submit_tag "次へ", class: "btn btn-next rounded-pill" %>
+  </div>
+<% end %>

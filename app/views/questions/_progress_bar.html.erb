@@ -1,0 +1,19 @@
+<div class="mb-4 px-3">
+  <div class="d-flex justify-content-between mb-1">
+    <span><%= step %> / <%= QuestionsController::QUESTIONS.size %></span>
+  </div>
+
+  <div class="progress" style="height: 25px;">
+    <div
+      class="progress-bar bg-info progress-bar-striped progress-bar-animated fw-bold text-black"
+      role="progressbar"
+      style="width: <%= (step.to_f / QuestionsController::QUESTIONS.size * 100).round %>%"
+      aria-valuenow="<%= step %>"
+      aria-valuemin="0"
+      aria-valuemax="<%= QuestionsController::QUESTIONS.size %>">
+      <%= (step.to_f / QuestionsController::QUESTIONS.size * 100).round %>%
+    </div>
+  </div>
+</div>
+
+
