@@ -19,3 +19,9 @@ production:
   database: kbx_production
   username: kbx
   password: <%= ENV["KBX_DATABASE_PASSWORD"] %>
+
+cable:
+  adapter: postgresql
+  database: kbx_production
+  username: kbx
+  password: <%= ENV["KBX_DATABASE_PASSWORD"] %>
