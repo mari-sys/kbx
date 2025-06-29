@@ -20,9 +20,6 @@ production:
   username: kbx
   password: <%= ENV["KBX_DATABASE_PASSWORD"] %>
 
-    primary:
-    <<: *default
-    database: kbx_production
 queue:
   <<: *default
   database: kbx_production_queue
@@ -30,7 +27,7 @@ queue:
   password: <%= ENV["KBX_DATABASE_PASSWORD"] %>
 
 cable:
-  adapter: postgresql
+  <<: *default
   database: kbx_production
   username: kbx
   password: <%= ENV["KBX_DATABASE_PASSWORD"] %>
