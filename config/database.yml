@@ -31,3 +31,9 @@ cable:
   database: kbx_production
   username: kbx
   password: <%= ENV["KBX_DATABASE_PASSWORD"] %>
+
+cache:
+  <<: *default
+  database: kbx_production_cache
+  username: kbx
+  password: <%= ENV["KBX_DATABASE_PASSWORD"] %>
