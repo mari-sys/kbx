@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
   get "results/show"
   # rootをトップページに設定
-  root 'home#index'
+  root "home#index"
   # リソースに対してquestionsコントローラーのnewとcreateアクションを設定
-  resources :questions, only: [:new, :create]
+  resources :questions, only: [ :new, :create ]
   # 質問ステップ用のルーティングを設定
-  get 'questions/step/:step', to: 'questions#step', as: 'question_step'
+  get "questions/step/:step", to: "questions#step", as: "question_step"
   # 質問の回答を保存するためのルーティングを設定
-  post 'questions/answer', to: 'questions#answer', as: 'question_answer'
+  post "questions/answer", to: "questions#answer", as: "question_answer"
   # 質問結果を表示するためのルーティングを設定
-  get 'results/:id', to: 'results#show', as: 'result'
+  get "results/:id", to: "results#show", as: "result"
 
-  get 'questions/reset', to: 'questions#reset', as: 'reset_questions'
+  get "questions/reset", to: "questions#reset", as: "reset_questions"
 
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -24,7 +24,7 @@ class QuestionsController < ApplicationController
     @question = QUESTIONS[step_num]
     @step = step_num
     @selected_answer = session[:answers]&.dig(@step.to_s)
-    
+
     session[:shuffled_options] ||= {}
     session[:shuffled_options][@step.to_s] ||= @question["options"].to_a.shuffle
     @shuffled_options = session[:shuffled_options][@step.to_s]
