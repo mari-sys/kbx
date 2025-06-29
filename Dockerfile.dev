@@ -25,3 +25,6 @@ RUN gem install bundler
 
 # アプリケーションのコードをコピー
 COPY . /myapp
+
+RUN yarn add esbuild sass
+
