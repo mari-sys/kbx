@@ -16,10 +16,10 @@
         <%= link_to "もう一度診断する", reset_questions_path, class: "btn btn-outline-secondary btn-lg rounded-pill" %>
         <%= link_to "トップへ戻る", reset_questions_path(to: "top"), class: "btn btn-primary btn-lg rounded-pill" %>
         <%= link_to "結果をXでシェアする", 
-            "https://twitter.com/intent/tweet?text=#{ERB::Util.url_encode("私の診断は『#{@result.title}』タイプでした！")}&url=#{ERB::Util.url_encode(request.original_url)}",
-            target: "_blank", 
-            rel: "noopener", 
-            class: "btn btn-info btn-lg rounded-pill" %>
+        "https://twitter.com/intent/tweet?text=#{ERB::Util.url_encode("私の診断は『#{@result.title}』タイプでした！")}&url=#{ERB::Util.url_encode(request.original_url)}&hashtags=キックボクシングスタイル診断",
+        target: "_blank", 
+        rel: "noopener", 
+        class: "btn btn-info btn-lg rounded-pill" %>
       </div>
     </div>
   <% else %>
