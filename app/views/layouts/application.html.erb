@@ -1,36 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-
-    <title><%= content_for(:title) || "キックボクシングスタイル診断アプリ" %></title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= yield :head %>
-
-    <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
-    <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
-
-    <link rel="icon" href="/icon.png" type="image/png">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/icon.png">
-
-    <%# Includes all stylesheet files in app/assets/stylesheets %>
-  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
-  <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
-
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="<%= image_url('ogp.png') %>" />
-  <meta property="og:title" content="キックボクシングスタイル診断アプリ" />
-  <meta property="og:description" content="あなたに合ったキックボクシングのスタイルがわかる！" />
-  <meta property="og:image" content="<%= image_url('ogp.png') %>" />
-  <meta property="og:url" content="<%= root_url %>" />
-  <meta property="og:type" content="website" />
+  <%= render "shared/meta_tags" %>
   </head>
   <body class="d-flex flex-column min-vh-100">
   <%= render "shared/header" %>

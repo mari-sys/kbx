@@ -2,6 +2,9 @@
   <% if @result %>
     <div class="card shadow-sm p-5 w-100" style="max-width: 500px;">
       <h2 class="mb-3 text-success">🎉 診断結果 🎉</h2>
+      <% content_for :ogp_title, "診断結果：#{@result.title}" %>
+      <% content_for :ogp_description, @result.description %>
+      <% content_for :ogp_image, image_url("#{@result.category}.png") %>
 
       <h3 class="text-primary mb-3 h4 fw-bold"><%= @result.title %></h3>
 
