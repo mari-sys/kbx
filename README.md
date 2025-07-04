@@ -1,24 +1,29 @@
-# README
+# キックボクシングスタイル診断  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サービス概要
+「キックボクシングはちょっと怖い」 そんなイメージを持つ人にも、気軽に楽しんでもらえるように開発した診断アプリです。 質問に答えるだけで、あなたに合ったキックスタイルを提案します。
 
-Things you may want to cover:
+## 想定されるユーザー層
+- キックボクシング未経験者
+- 興味はあるけど「ちょっと怖い」と感じている人
+- 楽しく運動を始めたい人
 
-* Ruby version
+## ユーザーが抱える課題
+- 「キックボクシングに興味はあるけど、怖そうで踏み出せない」
+- 「どんな練習が自分に合っているかわからない」
+- 「楽しみながら運動を始めたいけど、続くかわからない」
 
-* System dependencies
+## このアプリが解決すること
+- 診断形式で、キックボクシングの入口として機能
+- 「性格」「体力」「目的」の選択ベースに合わせて最適なスタイルを提案
 
-* Configuration
+## 主な機能
+- 質問に答えることで診断結果を表示
+- 診断結果をSNS（例: X）でシェア
+- 診断結果に応じたキックボクシングスタイルの提案
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 技術スタック
+- フロントエンド:HTML/Bootstrap
+- バックエンド:Ruby on Rails
+- DB:PostgreSQL
+- デプロイ:Render
