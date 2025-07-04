@@ -1,0 +1,16 @@
+ja:
+  top:
+    catchphrase: "あなたにぴったりのキックボクシングスタイルを見つけよう！"
+    start_button: "診断スタート"
+  results:
+    heading: "🎉 診断結果 🎉"
+    ogp_title: "診断結果：%{title}"
+    try_again: "もう一度診断する"
+    to_top: "トップへ戻る"
+    share_on_x: "結果をXでシェアする"
+    share_text: "私の診断は『%{title}』タイプでした！"
+    not_found: "診断結果が見つかりませんでした。"
+  header:
+    title: "KickBoxingスタイル診断"
+  footer:
+    site_name: "KickBoxingスタイル診断"

@@ -1,8 +1,9 @@
-<div class="d-flex flex-column justify-content-center align-items-center  bg-cream px-3 py-5 text-center">
+<div class="d-flex flex-column justify-content-center align-items-center bg-cream px-3 py-5 text-center">
   <% if @result %>
     <div class="card shadow-sm p-5 w-100" style="max-width: 500px;">
-      <h2 class="mb-3 text-success">🎉 診断結果 🎉</h2>
-      <% content_for :ogp_title, "診断結果：#{@result.title}" %>
+      <h2 class="mb-3 text-success"><%= t("results.heading") %></h2>
+
+      <% content_for :ogp_title, t("results.ogp_title", title: @result.title) %>
       <% content_for :ogp_description, @result.description %>
       <% content_for :ogp_image, image_url("#{@result.category}.png") %>
 
@@ -10,24 +11,25 @@
 
       <%= image_tag "#{@result.category}.png",
             class: "mb-3",
-              style: "max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto;",
+            style: "max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto;",
             alt: @result.title %>
 
       <p class="lead mb-4" style="font-size: 1.2rem;"><%= @result.description %></p>
 
       <div class="d-grid gap-3 mt-4">
-        <%= link_to "もう一度診断する", reset_questions_path, class: "btn btn-outline-secondary btn-lg rounded-pill" %>
-        <%= link_to "トップへ戻る", reset_questions_path(to: "top"), class: "btn btn-primary btn-lg rounded-pill" %>
-        <%= link_to "結果をXでシェアする", 
-        "https://twitter.com/intent/tweet?text=#{ERB::Util.url_encode("私の診断は『#{@result.title}』タイプでした！")}&url=#{ERB::Util.url_encode(request.original_url)}&hashtags=キックボクシングスタイル診断",
-        target: "_blank", 
-        rel: "noopener", 
-        class: "btn btn-info btn-lg rounded-pill" %>
+        <%= link_to t("results.try_again"), reset_questions_path, class: "btn btn-outline-secondary btn-lg rounded-pill" %>
+        <%= link_to t("results.to_top"), reset_questions_path(to: "top"), class: "btn btn-primary btn-lg rounded-pill" %>
+        <%= link_to t("results.share_on_x"),
+          "https://twitter.com/intent/tweet?text=#{ERB::Util.url_encode(t("results.share_text", title: @result.title))}&url=#{ERB::Util.url_encode(request.original_url)}&hashtags=キックボクシングスタイル診断",
+          target: "_blank",
+          rel: "noopener",
+          class: "btn btn-info btn-lg rounded-pill" %>
       </div>
     </div>
   <% else %>
     <div class="alert alert-warning w-100 text-center">
-      診断結果が見つかりませんでした。
+      <%= t("results.not_found") %>
     </div>
   <% end %>
 </div>
+

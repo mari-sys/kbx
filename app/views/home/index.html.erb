@@ -2,8 +2,10 @@
   <%= image_tag "kickboxing_top.png", 
       class: "mb-4", 
       style: "max-height: 50vh; max-width: 100%; height: auto;" %>
-  <p class="mb-3" style="font-size: 1.25rem; line-height: 1.6;">あなたにぴったりのキックボクシングスタイルを見つけよう！</p>
-  <%= link_to "診断スタート", question_step_path(1), 
+  <p class="mb-3" style="font-size: 1.25rem; line-height: 1.6;">
+  <%= t("top.catchphrase") %>
+  </p>
+  <%= link_to t("top.start_button"), question_step_path(1), 
     class: "btn btn-lg px-4 py-2 fw-bold text-white rounded-pill btn-kick-start" %>
 </main>
 
