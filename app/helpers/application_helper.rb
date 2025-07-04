@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def show_footer?
+    controller_name == "home"
+  end
+
   def ogp_title
     content_for?(:ogp_title) ? content_for(:ogp_title) : "キックボクシングスタイル診断アプリ"
   end

@@ -10,7 +10,7 @@
     <%= yield %>
     </main>
 
-  <% if controller_name == "home" %> 
+  <% if show_footer? %>
     <%= render "shared/footer" %>
     <% end %>
   </body>

@@ -1,21 +1,28 @@
 <div class="d-flex flex-column justify-content-center align-items-center bg-cream px-3 py-5 text-center">
   <% if @result %>
     <div class="card shadow-sm p-5 w-100" style="max-width: 500px;">
-      <h2 class="mb-3 text-success"><%= t("results.heading") %></h2>
 
+      <!-- 見出し -->    
+      <h2 class="mb-3 text-success"><%= t("results.heading") %></h2>
+      
+      <!-- OGP設定 -->
       <% content_for :ogp_title, t("results.ogp_title", title: @result.title) %>
       <% content_for :ogp_description, @result.description %>
       <% content_for :ogp_image, image_url("#{@result.category}.png") %>
 
+      <!-- タイトル -->
       <h3 class="text-primary mb-3 h4 fw-bold"><%= @result.title %></h3>
 
+      <!-- カテゴリ画像 -->
       <%= image_tag "#{@result.category}.png",
             class: "mb-3",
             style: "max-width: 300px; width: 100%; height: auto; display: block; margin: 0 auto;",
             alt: @result.title %>
+            
+            <!-- 説明文 -->
+            <p class="lead mb-4" style="font-size: 1.2rem;"><%= @result.description %></p>
 
-      <p class="lead mb-4" style="font-size: 1.2rem;"><%= @result.description %></p>
-
+      <!-- ボタン群 -->
       <div class="d-grid gap-3 mt-4">
         <%= link_to t("results.try_again"), reset_questions_path, class: "btn btn-outline-secondary btn-lg rounded-pill" %>
         <%= link_to t("results.to_top"), reset_questions_path(to: "top"), class: "btn btn-primary btn-lg rounded-pill" %>
