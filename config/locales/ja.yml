@@ -10,6 +10,11 @@ ja:
     share_on_x: "結果をXでシェアする"
     share_text: "私の診断は『%{title}』タイプでした！"
     not_found: "診断結果が見つかりませんでした。"
+    see_others: "他のスタイルも見てみる"
+    index:
+      heading: "スタイル一覧"
+      back_to_top: "トップへ戻る"
+      back_to_results: "診断結果へ戻る"
   header:
     title: "KickBoxingスタイル診断"
   footer:

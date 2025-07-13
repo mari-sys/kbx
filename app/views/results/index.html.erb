@@ -1,0 +1,23 @@
+<section class="container py-5">
+  <h2 class="text-center mb-4 fw-bold"><%= t("results.index.heading") %></h2>
+
+  <div class="d-flex flex-column align-items-center gap-4">
+    <% @results.each do |result| %>
+      <div class="card w-100 shadow-sm" style="max-width: 500px;">
+        <%= image_tag "#{result.category}.png", class: "card-img-top", alt: result.title %>
+        <div class="card-body">
+          <h5 class="card-title"><%= result.title %></h5>
+          <p class="card-text"><%= result.description %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center mt-4 d-grid gap-3" style="max-width: 500px; margin: 0 auto;">
+  <%= link_to t("results.index.back_to_top"), reset_questions_path(to: "top"), class: "btn btn-outline-primary btn-lg rounded-pill" %>
+
+  <% if session[:last_result_category].present? %>
+    <%= link_to t("results.index.back_to_results"), result_path(session[:last_result_category]), class: "btn btn-outline-secondary btn-lg rounded-pill" %>
+  <% end %>
+</div>
+</section>
